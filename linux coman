@@ -1,0 +1,62 @@
+1  clear
+    2  ls
+    3  ls al
+    4  ls la
+    5  clear
+    6  ls -la
+    7  whoami
+    8  pwd
+    9  ls -la
+   10  uname -a
+   11  clear
+   12  cd /home
+   13  ls
+   14  ls -la
+   15  cd
+   16  ls
+   17  mkdir curso
+   18  ls
+   19  ls -la
+   20  rm curso
+   21  rm -r curso
+   22  ls
+   23  ls -la
+   24  mkdir pruebahistory
+   25  history
+   26  rm -r pruebahistory
+   27  ls
+   28  ls -la
+   29  clear
+   30  history
+   31  free -h
+   32  clear
+   33  free -h
+   34  nproc
+   35  sudo yum instal
+   36  sudo yum instal htop
+   37  sudo yum install htop
+   38  htop
+   39  man ls
+   40  clear
+   41  mkdir prueba
+   42  ls
+   43  ls -a
+   44  ls-la
+   45  ls -la
+   46  mkdir -p lirio/{web,datos,logs}
+   47  ls
+   48  ls -la
+   49  cd lirio
+   50  ls
+   51  cd
+   52  clear
+   53  cd lirio && ls -R
+   54  echo "bienbenidos a lirio>" > web/index.html
+   55  ls -la
+   56  ls web
+   57  ls -la web
+   58  cat
+   59  cat index.html
+   60  cat web/index.html
+   61  ls -lh web
+   62  history
