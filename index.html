@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Servicios holísticos para cuidar tu cuerpo, mente y energía.">
+  <title>Luz Interior | Servicios Holísticos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cream: #f8f5ed;
+      --ink: #26352f;
+      --sage: #718c77;
+      --sage-dark: #526d59;
+      --sand: #ddc8a5;
+      --white: #fff;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--cream);
+      font-family: "Manrope", sans-serif;
+      line-height: 1.6;
+    }
+    h1, h2, h3, .brand { font-family: "Cormorant Garamond", serif; }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    nav {
+      height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1180px;
+      margin: auto;
+      padding: 0 24px;
+    }
+    .brand { font-size: 28px; font-weight: 600; letter-spacing: .02em; }
+    .nav-links { display: flex; align-items: center; gap: 30px; font-size: 14px; }
+    .nav-links a { transition: color .2s; }
+    .nav-links a:hover { color: var(--sage); }
+    .button {
+      display: inline-block;
+      padding: 13px 22px;
+      border-radius: 999px;
+      background: var(--sage-dark);
+      color: var(--white);
+      font-weight: 600;
+      transition: transform .2s, background .2s;
+    }
+    .button:hover { transform: translateY(-2px); background: var(--ink); }
+
+    .hero {
+      min-height: 680px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      max-width: 1180px;
+      margin: auto;
+      padding: 40px 24px 80px;
+    }
+    .hero-copy { padding-right: 65px; }
+    .eyebrow {
+      color: var(--sage-dark);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+    h1 {
+      margin: 14px 0 20px;
+      font-size: clamp(58px, 7vw, 92px);
+      line-height: .88;
+      font-weight: 500;
+    }
+    h1 em { color: var(--sage); font-weight: 500; }
+    .hero-copy > p { max-width: 510px; color: #617067; font-size: 17px; }
+    .hero-actions { display: flex; gap: 18px; align-items: center; margin-top: 32px; }
+    .text-link { border-bottom: 1px solid var(--sage); padding-bottom: 4px; font-size: 14px; }
+    .hero-image {
+      height: 560px;
+      border-radius: 48% 48% 18px 18px;
+      overflow: hidden;
+      box-shadow: 0 24px 60px rgba(49, 68, 57, .12);
+    }
+    .hero-image img { width: 100%; height: 100%; object-fit: cover; }
+
+    section { padding: 90px 24px; }
+    .section-heading { text-align: center; max-width: 650px; margin: 0 auto 48px; }
+    .section-heading h2 { margin: 12px 0; font-size: 52px; line-height: 1; font-weight: 500; }
+    .section-heading p { color: #69776f; }
+    .services { background: var(--white); }
+    .service-grid {
+      max-width: 1180px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+    .service-card {
+      padding: 40px 34px;
+      border: 1px solid #e8e4da;
+      border-radius: 18px;
+      background: var(--cream);
+      transition: transform .25s, box-shadow .25s;
+    }
+    .service-card:hover { transform: translateY(-7px); box-shadow: 0 18px 40px rgba(38, 53, 47, .08); }
+    .icon { font-size: 30px; color: var(--sage-dark); }
+    .service-card h3 { margin: 18px 0 10px; font-size: 30px; line-height: 1.1; }
+    .service-card p { color: #69776f; font-size: 14px; }
+    .service-card a { display: inline-block; margin-top: 12px; color: var(--sage-dark); font-size: 13px; font-weight: 600; }
+
+    .about {
+      max-width: 1180px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .about-image { height: 520px; border-radius: 18px 180px 18px 18px; overflow: hidden; }
+    .about-image img { width: 100%; height: 100%; object-fit: cover; }
+    .about-copy h2 { margin: 12px 0 22px; font-size: 54px; line-height: 1; font-weight: 500; }
+    .about-copy p { color: #69776f; }
+    .quote { margin-top: 28px; padding-left: 22px; border-left: 3px solid var(--sand); font-family: "Cormorant Garamond", serif; font-size: 24px; }
+
+    .testimonials { background: var(--sage-dark); color: var(--white); }
+    .testimonials .section-heading p { color: #dce7de; }
+    .testimonial-grid { max-width: 1050px; margin: auto; display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    blockquote { margin: 0; padding: 34px; border-radius: 16px; background: rgba(255,255,255,.08); font-family: "Cormorant Garamond", serif; font-size: 25px; }
+    blockquote footer { margin-top: 18px; font-family: "Manrope", sans-serif; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; }
+
+    .contact {
+      max-width: 1180px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+      padding: 55px 65px;
+      border-radius: 24px;
+      background: var(--sand);
+    }
+    .contact h2 { margin: 0 0 8px; font-size: 48px; line-height: 1; font-weight: 500; }
+    .contact p { margin: 0; }
+    footer { padding: 35px 24px; text-align: center; color: #748078; font-size: 12px; }
+
+    @media (max-width: 800px) {
+      nav { height: 72px; }
+      .nav-links a:not(.button) { display: none; }
+      .hero { grid-template-columns: 1fr; padding-top: 20px; }
+      .hero-copy { padding-right: 0; padding-bottom: 45px; }
+      h1 { font-size: 64px; }
+      .hero-image { height: 430px; }
+      .service-grid, .about, .testimonial-grid { grid-template-columns: 1fr; }
+      section { padding: 70px 24px; }
+      .section-heading h2, .about-copy h2 { font-size: 44px; }
+      .about { gap: 40px; }
+      .about-image { height: 420px; }
+      .contact { align-items: flex-start; flex-direction: column; padding: 40px 28px; }
+    }
+  </style>
+</head>
+<body>
+  <nav aria-label="Navegación principal">
+    <a class="brand" href="#">Luz Interior</a>
+    <div class="nav-links">
+      <a href="#servicios">Servicios</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#testimonios">Experiencias</a>
+      <a class="button" href="#contacto">Reservar sesión</a>
+    </div>
+  </nav>
+
+  <main>
+    <div class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow">Bienestar integral</span>
+        <h1>Regresa a tu <em>centro.</em></h1>
+        <p>Un espacio sereno para armonizar cuerpo, mente y espíritu mediante terapias conscientes y acompañamiento personalizado.</p>
+        <div class="hero-actions">
+          <a class="button" href="#servicios">Descubre tus terapias</a>
+          <a class="text-link" href="#nosotros">Conoce mi enfoque</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=900&q=85" alt="Mujer practicando yoga al aire libre">
+      </div>
+    </div>
+
+    <section class="services" id="servicios">
+      <div class="section-heading">
+        <span class="eyebrow">Nuestros servicios</span>
+        <h2>Camino hacia tu equilibrio</h2>
+        <p>Cada sesión se adapta a tu momento personal, creando una experiencia única y profunda.</p>
+      </div>
+      <div class="service-grid">
+        <article class="service-card">
+          <div class="icon" aria-hidden="true">✦</div>
+          <h3>Masaje terapéutico</h3>
+          <p>Libera tensiones, mejora la circulación y vuelve a habitar tu cuerpo con calma y presencia.</p>
+          <a href="#contacto">Más información →</a>
+        </article>
+        <article class="service-card">
+          <div class="icon" aria-hidden="true">☼</div>
+          <h3>Reiki y energía</h3>
+          <p>Una práctica suave para equilibrar tu energía, reducir el estrés y recuperar tu vitalidad.</p>
+          <a href="#contacto">Más información →</a>
+        </article>
+        <article class="service-card">
+          <div class="icon" aria-hidden="true">◌</div>
+          <h3>Meditación consciente</h3>
+          <p>Encuentra claridad y tranquilidad mediante técnicas guiadas adaptadas a tu nivel.</p>
+          <a href="#contacto">Más información →</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="nosotros">
+      <div class="about">
+        <div class="about-image">
+          <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=900&q=85" alt="Persona meditando en un entorno natural">
+        </div>
+        <div class="about-copy">
+          <span class="eyebrow">Mi filosofía</span>
+          <h2>Escuchar, acompañar, sanar</h2>
+          <p>Creo que el bienestar nace cuando dejamos de luchar con nosotros mismos y aprendemos a escucharnos. Mis prácticas integran sabiduría ancestral y herramientas modernas para acompañarte con respeto y sin juicio.</p>
+          <p>Cada proceso comienza con una conversación sincera y avanza a tu propio ritmo.</p>
+          <div class="quote">“La calma que buscas ya vive dentro de ti.”</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials" id="testimonios">
+      <div class="section-heading">
+        <span class="eyebrow">Experiencias</span>
+        <h2>Lo que dicen quienes confían</h2>
+      </div>
+      <div class="testimonial-grid">
+        <blockquote>
+          “Llegué con la mente saturada y me fui sintiendo ligera. Encontré herramientas que continúan acompañándome.”
+          <footer>— Laura M.</footer>
+        </blockquote>
+        <blockquote>
+          “Un espacio cálido, profesional y profundamente humano. Cada sesión se siente personalizada y transformadora.”
+          <footer>— Carlos R.</footer>
+        </blockquote>
+      </div>
+    </section>
+
+    <section id="contacto">
+      <div class="contact">
+        <div>
+          <h2>Comienza tu proceso</h2>
+          <p>Reserva una sesión inicial y hagamos juntos el siguiente paso.</p>
+        </div>
+        <a class="button" href="mailto:hola@luzinterior.com">Solicitar una cita</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>© 2026 Luz Interior · Bienestar para cuerpo, mente y espíritu</footer>
+</body>
+</html>
